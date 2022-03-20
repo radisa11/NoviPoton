@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Results</title>
+</head>
+<body>
+    <h1>The Results!</h1> 
+    <table width="200" border="1" >
+        <tr>
+            <th>Movie</th>
+            <th>Votes</th>
+        </tr>
+        {% for v in session["votes"] %}
+            <tr>
+                <td>{{v}}</td>
+                <td>{{session["votes"][v]}}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td>Total</td>
+            <td>{{session["total_votes"]}}</td>
+        </tr>
+    </table>
+    <br><br>
+    <table width="400" border="1" >
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Movie</th>
+        </tr>
+        {% for v in voters %}
+        <tr>
+            <td>{{v.name}}</td>
+            <td>{{v.age}}</td>
+            <td>{{v.movie}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <a href="/">Vote Again</a><br><br>
+    <a href="/clear">Claear Votes</a>
+</body>
+</html>
